@@ -1,2 +1,2 @@
 # Twitter-Follow-Card-Component
-This component is a recreation of a Twitter Follow fragment of Twitter.
+This project is a recreation of the Following component of Twitter.
