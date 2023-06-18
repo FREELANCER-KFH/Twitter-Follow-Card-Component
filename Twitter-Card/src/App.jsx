@@ -3,25 +3,50 @@ import { TwitterFollowCard } from './TwitterFollowCard'
 
 export function App (){
 
+    const users = [
+        {
+            userName: "programmerKFH",
+            name: "Kevin Feliz Henriquez",
+            isFollowing: false
+        },
+        {
+            userName: "Benignomnez", 
+            name: "Benigno Martinez",
+            isFollowing: true
+        },
+        {
+            userName: "pancakecodes",
+            name: "Sabrina Hernandez",
+            isFollowing: false
+        },
+        {
+            userName: "codebyeli" ,
+            name: "Hector Encarnacion",
+            isFollowing: true
+        },
+        {
+            userName: "teresa08",
+            name: "Maria Teresa Soriano",
+            isFollowing: false
+        }
+    ]
+
     return (
         <>
-            <div className='container'>
-                <TwitterFollowCard 
-                    userName="programmerKFH" name="Kevin Feliz Henriquez"
-                />
-                <TwitterFollowCard 
-                    userName="Benignomnez" name="Benigno Martinez"
-                />
-                <TwitterFollowCard 
-                     userName="pancakecodes" name="Sabrina Hernandez"
-                />
-                <TwitterFollowCard 
-                    userName="codebyeli" name="Hector Encarnacion"
-                />
-                <TwitterFollowCard 
-                    userName="teresa08" name="Maria Teresa Soriano"
-                />
-            </div>
+            <section className='container'>
+                <h1>WHO TO FOLLOW</h1>
+                {
+                    users.map(({userName, name, isFollowing}) =>(
+                        <TwitterFollowCard
+                            key={userName}
+                            userName={userName}
+                            name={name}
+                            initialIsFollowing={isFollowing}
+                        >
+                        </TwitterFollowCard>
+                    ))
+                }
+            </section>
         </>
     )
 }
